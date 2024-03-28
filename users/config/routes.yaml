@@ -1,0 +1,7 @@
+controllers:
+    resource:
+        path: /users
+        controller: App\Controller\UsersController::createUser
+        namespace: App\Controller
+        methods: [ 'POST' ]
+    type: attribute
