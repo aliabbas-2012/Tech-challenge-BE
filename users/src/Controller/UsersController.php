@@ -21,7 +21,6 @@ class UsersController extends AbstractController
         // Extract data from request body
         $requestData = json_decode($request->getContent(), true);
 
-
         // Log user data if requestData is not null
         if ($requestData !== null) {
             $this->logger->info('New user created', $requestData);
