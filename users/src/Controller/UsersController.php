@@ -1,5 +1,4 @@
 <?php
-// src/Controller/UsersController.php
 
 namespace App\Controller;
 
@@ -22,13 +21,14 @@ class UsersController extends AbstractController
         // Extract data from request body
         $requestData = json_decode($request->getContent(), true);
 
-        // Validate request data
-        // You can use Symfony's validation component for this
 
-        // Log user data
-        $this->logger->info('New user created', $requestData);
+        // Log user data if requestData is not null
+        if ($requestData !== null) {
+            $this->logger->info('New user created', $requestData);
+        }
 
         // Return success response
         return new JsonResponse(['message' => 'User created successfully'], JsonResponse::HTTP_CREATED);
     }
+
 }
