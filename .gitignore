@@ -8,16 +8,14 @@ users/config/secrets/prod/prod.decrypt.private.php
 users/public/bundles/
 users/var/*
 users/vendor/*
+users/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
 users/phpunit.xml
 users/.phpunit.result.cache
 users/composer.lock
+users/symfony.lock
 ###< phpunit/phpunit ###
-
-###> symfony/phpunit-bridge ###
-users/.phpunit.result.cache
-users/phpunit.xml
 ###< symfony/phpunit-bridge ###
 .idea/*
