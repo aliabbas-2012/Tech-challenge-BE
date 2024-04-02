@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: rabbit_mq_dev_challenge
+    ports:
+      - "5672:5672"
+      - "15672:15672" # For RabbitMQ management UI
+    networks:
+      - challenge_network
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+  symfony_user_app:
+    image: challenge.users
+    container_name: user_challenge
+    ports:
+      - "8000:8000"
+    networks:
+      - challenge_network
+    volumes:
+      - ./users:/var/www/html
+    depends_on:
+      - rabbitmq
+    environment:
+      - MESSENGER_TRANSPORT_DSN=amqp://user:password@rabbitmq:5672/%2f/messages
+
+networks:
+  challenge_network:

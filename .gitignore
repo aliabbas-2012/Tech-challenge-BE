@@ -4,6 +4,7 @@ users/.env.local
 users/.env.local.php
 users/.env.*.local
 users/.env
+users/composer.lock
 users/config/secrets/prod/prod.decrypt.private.php
 users/public/bundles/
 users/var/*
@@ -14,6 +15,7 @@ notifications/.env.local
 notifications/.env.local.php
 notifications/.env.*.local
 notifications/.env
+notifications/composer.lock
 notifications/config/secrets/prod/prod.decrypt.private.php
 notifications/public/bundles/
 notifications/var/*
@@ -25,7 +27,7 @@ notifications/vendor/
 ###> phpunit/phpunit ###
 users/phpunit.xml
 users/.phpunit.result.cache
-users/composer.lock
+users/composer.json
 users/symfony.lock
 ###< phpunit/phpunit ###
 ###< symfony/phpunit-bridge ###
