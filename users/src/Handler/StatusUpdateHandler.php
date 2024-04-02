@@ -10,16 +10,10 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 class StatusUpdateHandler
 {
-    public function __construct(
-        private readonly LoggerInterface $logger,
-    ) {}
+    public function __construct() {}
 
     public function __invoke(StatusUpdate $statusUpdate): void
     {
-        $statusDescription = $statusUpdate->getStatus();
-
-        $this->logger->warning('APP2: {STATUS_UPDATE} - '.$statusDescription);
-
-        ## business logic, i.e. sending internal notification or queueing some other systems
+        //mock function would be properly implemented in notifications
     }
 }
