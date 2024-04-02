@@ -9,6 +9,17 @@ users/public/bundles/
 users/var/*
 users/vendor/*
 users/vendor/
+
+notifications/.env.local
+notifications/.env.local.php
+notifications/.env.*.local
+notifications/.env
+notifications/config/secrets/prod/prod.decrypt.private.php
+notifications/public/bundles/
+notifications/var/*
+notifications/vendor/*
+notifications/vendor/
+
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
@@ -18,4 +29,16 @@ users/composer.lock
 users/symfony.lock
 ###< phpunit/phpunit ###
 ###< symfony/phpunit-bridge ###
+
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+notifications/phpunit.xml
+notifications/.phpunit.result.cache
+notifications/composer.lock
+notifications/symfony.lock
+###< phpunit/phpunit ###
+###< symfony/phpunit-bridge ###
+
 .idea/*
+basic/*

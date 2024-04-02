@@ -5,14 +5,7 @@ framework:
 
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
-            external_messages:
-                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
-                options:
-                    auto_setup: false
-                    exchange:
-                        name: messages
-                        type: direct
-                        default_publish_routing_key: from_external
-                    queues:
-                        messages:
-                            binding_keys: [from_external]
+            async: "%env(MESSENGER_TRANSPORT_DSN)%"
+        routing:
+            # Route your messages to the transports
+            'App\Message\StatusUpdate': async
