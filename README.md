@@ -10,14 +10,6 @@
    composer install
 ```
 
-
-6. Go to var/log/dev.log and see logs for both microservices 
-
-```bash
-   tail -f var/log/dev.log
-```
-
-
 3. Go to users directory
 
 ```bash
