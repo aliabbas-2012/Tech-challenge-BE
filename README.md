@@ -10,29 +10,62 @@
    composer install
 ```
 
-4. Go to users directory and run following commands, first command starts the server the next command pushes the data to queue
+
+6. Go to var/log/dev.log and see logs for both microservices 
 
 ```bash
-   symfony  server:start
+   tail -f var/log/dev.log
+```
+
+
+3. Go to users directory
+
+```bash
+   sudo docker build -t challenge.users .
+```
+
+4. Go to notifications directory
+
+```bash
+  sudo docker build -t challenge.notifications .
+```
+
+5. Go to users directory
+
+```bash
+   sudo docker build -t challenge.users .
+```
+
+6. Come back root of both microservices and run 
+
+```bash
+  sudo docker-compose up
+```
+
+7. Run the following command to push the data to Rabbit MQ
+
+
+```bash
    
    curl --location 'http://localhost:8000/users' \
         --header 'Content-Type: application/json' \
         --data-raw '{
-            "email": "ali.abbas@site.com",
-            "firstName": "Ali",
-            "lastName": "Abbas"
+            "email": "user@site.com",
+            "firstName": "First Name",
+            "lastName": "Last Name"
   }'
    
 ```
 
-5. Go to notifications directory
+8. Run following command to consume messages
 
-```bash
-   php bin/console messenger:consume
+``` bash
+   sudo docker exec -it notification_challenge php bin/console messenger:consume
 ```
 
-5. Go to var/log/dev.log and see logs for both microservices 
-
-```bash
-   tail -f var/log/dev.log
+9. Go to both projects /var directory and see dev.log 
+``` bash
+    tail -f users/var/log/dev.log
+    
+    tail -f notifications/var/log/dev.log
 ```
