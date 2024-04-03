@@ -4,6 +4,7 @@ users/.env.local
 users/.env.local.php
 users/.env.*.local
 users/.env
+users/.env.test
 users/composer.lock
 users/config/secrets/prod/prod.decrypt.private.php
 users/public/bundles/

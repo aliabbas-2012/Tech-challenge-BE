@@ -61,3 +61,8 @@
     
     tail -f notifications/var/log/dev.log
 ```
+
+9. Unit Testcase
+``` bash
+    sudo docker exec -it user_challenge php bin/phpunit tests/UsersControllerTest.php
+```
