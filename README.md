@@ -22,12 +22,6 @@
   sudo docker build -t challenge.notifications .
 ```
 
-5. Go to users directory
-
-```bash
-   sudo docker build -t challenge.users .
-```
-
 6. Come back root of both microservices and run 
 
 ```bash
